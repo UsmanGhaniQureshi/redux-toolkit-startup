@@ -9,10 +9,11 @@ const Posts = () => {
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
-  console.log(posts);
 
   if (loading) return <p>Loading...</p>;
-  return <div>Posts</div>;
+  return <div>Posts
+    {posts.map(post=><p key={post.id}>{post.title}</p>)}
+  </div>;
 };
 
 export default Posts;
